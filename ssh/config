@@ -1,0 +1,18 @@
+ControlMaster auto
+ControlPath /tmp/ssh_mux_%h_%p_%r
+
+Host db*
+    HostName %h.cs.pitt.edu
+    User jjs86
+
+Host *.home
+    HostName jesseszwedko.com
+    ProxyCommand ssh gateway nc -q 600 %h %p
+
+Host cs.pitt.edu* *.cs.pitt.edu*
+    User jjs86
+
+Host *%*
+    ProxyCommand ssh $(echo '%r@%h' | awk -F%% '{OFS="%%"; NF--; print $0}') nc $(echo '%r@%h' | awk -F%% '{print $NF}') %p
+
+ForwardAgent yes
