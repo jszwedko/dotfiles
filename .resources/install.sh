@@ -9,7 +9,7 @@ mv ~/.vim ~/dotfiles.bak
 mv ~/.tmux.conf ~/dotfiles.bak
 mv ~/.ssh/config ~/dotfiles.bak/ssh_config
 mv ~/.gitconfig ~/dotfiles.bak
-mv ~/.xmobarrc ~/dofiles.bak
+mv ~/.xmobarrc ~/dotfiles.bak
 mv ~/.xmonad/xmonad.hs ~/dotfiles.bak
 mv ~/.Xdefaults ~/dotfiles.bak
 mv ~/.xsession ~/dotfiles.bak
