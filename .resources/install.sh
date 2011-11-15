@@ -1,6 +1,4 @@
 #! /bin/bash
-echo 'Are you sure you want to run this script?'
-echo 'It will erase your current bash and vim configs.'
 read -p '$' -n 1
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
