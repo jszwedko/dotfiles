@@ -1,4 +1,9 @@
 #!/bin/bash
+
+exists()
+{
+    command -v $1 &> /dev/null
+}
  
 # Load resources
  
@@ -15,32 +20,36 @@ xsetroot -solid midnightblue
  
 # Fire up apps
  
-xscreensaver -no-splash &
- 
-#if [ -x /usr/bin/wicd-gtk ] ; then
-   #/usr/bin/wicd-gtk &
-#fi
+if exists "xscreensaver" ; then
+    xscreensaver -no-splash &
+fi
 
-sleep 3
-
-if [ -x /usr/bin/gnome-power-manager ] ; then
+if exists "gnome-power-manager" ; then
    gnome-power-manager &
 fi
 
-if [ -x /usr/bin/bluetooth-applet ] ; then
-    /usr/bin/bluetooth-applet &
+if exists "bluetooth-applet" ; then
+    bluetooth-applet &
 fi
 
-if [ -x /usr/bin/blueproximity ] ; then
-    /usr/bin/blueproximity &
+if exists "blueproximity" ; then
+    blueproximity &
 fi
 
-if [ -x /usr/bin/nm-applet ] ; then
-   /usr/bin/nm-applet &
+if exists "nm-applet" ; then
+   nm-applet &
 fi
 
-if [ -x /usr/bin/xbindkeys ] ; then
-    /usr/bin/xbindkeys &
+if exists "xbindkeys" ; then
+    xbindkeys &
+fi
+
+if exists "dropboxd" ; then
+    dropboxd &
+fi
+
+if exists "xflux" ; then
+    xflux -z 15209 &
 fi
  
 xsetroot -cursor_name left_ptr
