@@ -97,4 +97,4 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 
-let g:vimwiki_list = [{'path': '~/work/tli/wiki/', 'path_html': '~/public_html/tli_wiki/'}]
+let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
