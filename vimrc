@@ -98,3 +98,9 @@ set background=dark
 colorscheme solarized
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
+
+"ctags
+"open location with tag as tab
+map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+"open location with tag as split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
