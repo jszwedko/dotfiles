@@ -27,3 +27,7 @@
 
 [merge]
     tool = vimdiff
+[core]
+	excludesfile = /home/jesse/.gitignore_global
+[push]
+	default = tracking
