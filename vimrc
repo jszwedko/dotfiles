@@ -27,7 +27,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set colorcolumn=80
+set colorcolumn=120
+highlight ColorColumn ctermbg=4
 set encoding=utf-8
 set scrolloff=6
 set autoindent
