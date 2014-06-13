@@ -34,4 +34,4 @@
 [core]
 	excludesfile = $HOME/.git-excludes
 [push]
-	default = tracking
+	default = simple
