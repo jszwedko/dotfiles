@@ -32,6 +32,6 @@
 	tool = meld
     defaultToUpstream = true
 [core]
-	excludesfile = /home/jesse/.gitignore_global
+	excludesfile = $HOME/.git-excludes
 [push]
 	default = tracking
