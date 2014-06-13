@@ -90,8 +90,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 set t_Co=256
-set background=dark
-colorscheme solarized
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
 
