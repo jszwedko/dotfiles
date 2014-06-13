@@ -1,6 +1,8 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.SetWMName
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Layout.LayoutModifier
@@ -34,7 +36,9 @@ main = do
     xmonad $ defaultConfig
         { manageHook = myManageHook
         , layoutHook = myLayoutHook
-        , logHook = dynamicLogWithPP xmobarPP
+        , logHook = do
+                    takeTopFocus
+                    dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
                         }

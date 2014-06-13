@@ -2,13 +2,9 @@ nmap OA gk
 nmap OB gj
 
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
 
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -26,9 +22,9 @@ set nocompatible
 
 set modelines=0
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 set colorcolumn=80
@@ -46,7 +42,7 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
+set number
 set undofile
 
 let mapleader = ","
@@ -78,7 +74,6 @@ nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-nnoremap ; :
 
 au FocusLost * :wa
 
@@ -114,3 +109,9 @@ autocmd User fugitive
 
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
+
+" Golang
+set rtp+=$GOROOT/misc/vim
+
+map ,t :w<cr>
+map ,- :nohl<cr>
