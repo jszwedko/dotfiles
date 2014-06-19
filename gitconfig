@@ -32,6 +32,6 @@
 	tool = meld
     defaultToUpstream = true
 [core]
-	excludesfile = $HOME/.git-excludes
+	excludesfile = ~/.git-excludes
 [push]
 	default = simple
