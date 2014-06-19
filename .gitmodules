@@ -49,3 +49,12 @@
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+[submodule "vim/bundle/gundo"]
+	path = vim/bundle/gundo
+	url = git@github.com:sjl/gundo.vim.git
+[submodule "vim/bundle/vim-ruby"]
+	path = vim/bundle/vim-ruby
+	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/dockerfile.vim"]
+	path = vim/bundle/dockerfile.vim
+	url = git@github.com:honza/dockerfile.vim.git
