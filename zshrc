@@ -32,3 +32,4 @@ eval "$(rbenv init -)"
 eval "$(goenv init -)"
 
 source ~/.zshenv
+source ~/.aliases
