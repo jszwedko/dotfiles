@@ -6,10 +6,10 @@ export GOPATH=$HOME/gopath
 
 export CDPATH=$HOME/workspace
 
-export PATH="$HOME/.goenv/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$PATH:$HOME/.goenv/bin"
+export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:/usr/local/share/npm/bin"
 
 export SDC_ACCOUNT='modclothdev'
 export SDC_URL='https://us-sw-1.api.joyentcloud.com'
