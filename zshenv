@@ -6,7 +6,7 @@ export GOPATH=$HOME/gopath
 
 export CDPATH=$HOME/workspace
 
-export PATH="$PATH:$HOME/.goenv/bin"
+export PATH="$PATH:$HOME/.goenv/bin:$HOME/.goenv/shims"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$PATH:$HOME/.rbenv/shims"
 export PATH="$PATH:/usr/local/share/npm/bin"
