@@ -35,3 +35,11 @@ eval "$(goenv init -)"
 
 source ~/.zshenv
 source ~/.aliases
+
+if ssh-add -l 2>&1 | grep -q 'Could not open' ; then
+  if [[ -z ~/.ssh/agent.out ]] ; then
+    cat `ssh-agent` > ~/.ssh/agent.out
+  fi
+
+  source ~/.ssh/agent.out
+fi
