@@ -34,4 +34,4 @@
 [core]
 	excludesfile = ~/.git-excludes
 [push]
-	default = simple
+	default = current
