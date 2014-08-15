@@ -17,8 +17,9 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                     , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run StdinReader
                     , Run CommandReader "~/.xmonad/ledmon" "LED"
+                    , Run Wireless "wlan0" ["-t","<qualitybar> <essid>"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#ffff00>%LED%</fc> %multicpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | %KPIT% %battery%"
+       , template = "%StdinReader% }{ %multicpu%  %memory% * %swap%  %battery%  %wlan0wi% <fc=#ee9a00>%date%</fc> %KPIT%"
        }
