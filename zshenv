@@ -9,7 +9,7 @@ export CDPATH=$HOME/workspace
 
 export PATH="$HOME/.goenv/bin:$HOME/.goenv/shims:$PATH"
 export PATH="$PATH:$HOME/.rbenv/bin"
-export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin"
 
 export SDC_ACCOUNT='modclothdev'
