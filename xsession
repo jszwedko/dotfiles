@@ -44,8 +44,8 @@ if exists "xbindkeys" ; then
     xbindkeys &
 fi
 
-if exists "dropboxd" ; then
-    dropboxd &
+if exists "dropbox" ; then
+    dropbox start
 fi
 
 if exists "xflux" ; then
