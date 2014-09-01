@@ -24,20 +24,12 @@ if exists "xscreensaver" ; then
     xscreensaver -no-splash &
 fi
 
-if exists "gnome-power-manager" ; then
-   gnome-power-manager &
-fi
-
 if exists "bluetooth-applet" ; then
     bluetooth-applet &
 fi
 
 if exists "blueproximity" ; then
     blueproximity &
-fi
-
-if exists "nm-applet" ; then
-   nm-applet &
 fi
 
 if exists "xbindkeys" ; then
@@ -49,7 +41,7 @@ if exists "dropbox" ; then
 fi
 
 if exists "xflux" ; then
-    xflux -z 15209 &
+    xflux -z 15209
 fi
  
 xsetroot -cursor_name left_ptr
