@@ -33,6 +33,17 @@ source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
 eval "$(goenv init -)"
 
+if [[ -f ~/.gpg-agent-info ]] ; then
+  source ~/.gpg-agent-info
+fi
+if gpg-agent 2>&1 | grep -q 'no gpg-agent running' ; then
+  gpg-agent -q --daemon --enable-ssh-support \
+    --write-env-file "${HOME}/.gpg-agent-info" 2>&1 > /dev/null
+  source ~/.gpg-agent-info
+fi
+export GPG_AGENT_INFO
+export SSH_AUTH_SOCK
+
 source ~/.zshenv
 source ~/.aliases
 
