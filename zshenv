@@ -11,6 +11,7 @@ export PATH="$HOME/.goenv/bin:$HOME/.goenv/shims:$PATH"
 export PATH="$PATH:$HOME/.rbenv/bin"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:$HOME/.cabal/bin"
 
 export SDC_ACCOUNT='modclothdev'
 export SDC_URL='https://us-sw-1.api.joyentcloud.com'
