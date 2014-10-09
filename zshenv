@@ -5,7 +5,7 @@ export EDITOR=vim
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
 
-export CDPATH=$HOME/workspace
+export CDPATH=.:$HOME/workspace
 
 export PATH="$HOME/.goenv/bin:$HOME/.goenv/shims:$PATH"
 export PATH="$PATH:$HOME/.rbenv/bin"
