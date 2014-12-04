@@ -58,3 +58,6 @@ if ssh-add -l 2>&1 | grep -q 'Could not open' ; then
 fi
 
 eval "$(hub alias -s)"
+
+# added by travis gem
+[ -f /home/jesse/.travis/travis.sh ] && source /home/jesse/.travis/travis.sh
