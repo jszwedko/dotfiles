@@ -73,3 +73,9 @@
 [submodule "vim/bundle/vim-jinja2-syntax"]
 	path = vim/bundle/vim-jinja2-syntax
 	url = git@github.com:Glench/Vim-Jinja2-Syntax.git
+[submodule "vim/bundle/vim-bats"]
+	path = vim/bundle/vim-bats
+	url = git@github.com:vim-scripts/bats.vim.git
+[submodule "vim/bundle/vim-ansible-yaml"]
+	path = vim/bundle/vim-ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
