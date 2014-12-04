@@ -56,3 +56,5 @@ if ssh-add -l 2>&1 | grep -q 'Could not open' ; then
 
   source ~/.ssh/agent.out
 fi
+
+eval "$(hub alias -s)"
