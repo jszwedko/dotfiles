@@ -43,7 +43,12 @@ fi
 if exists "xflux" ; then
     xflux -z 15209
 fi
+
+ssh-agent > ~/.ssh/agent.out
  
+gpg-agent -q --daemon --enable-ssh-support --write-env-file \
+  "${HOME}/.gpg-agent-info" 2>&1 > /dev/null
+
 xsetroot -cursor_name left_ptr
  
 exec xmonad
