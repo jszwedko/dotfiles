@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-ansible-yaml"]
 	path = vim/bundle/vim-ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
