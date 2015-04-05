@@ -4,10 +4,13 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , position = TopW L 90
        , commands = [
                     Run BatteryP ["BAT0"]
-                      ["-t", "(<left>% / <timeleft>) <watts> <acstatus>",
+                      ["-t", "<acstatus>",
                        "-L", "30", "-H", "80", "-p", "3", "-S",
                        "-l", "red", "-n", "blue", "-h", "green",
-                       "--", "-l", "red", "-m", "blue", "-h", "green"
+                       "--", "-l", "red", "-m", "blue", "-h", "green",
+                       "-i", "AC (<left>%)",
+                       "-O", "AC (<left>%)",
+                       "-o", "Batt (<left>% / <timeleft>) <watts>"
                        ]
                       600
                     , Run Weather "KSFO" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
