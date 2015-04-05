@@ -20,14 +20,14 @@ myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
     , manageDocks
-    ] 
+    ]
 
 myLayoutHook =  smartBorders $
-                avoidStruts $ 
+                avoidStruts $
                 mkToggle (single REFLECTX) $
                 mkToggle (single REFLECTY) $
                 ( tall ||| Mirror tall ||| Full ||| skype )
-                where 
+                where
                     tall = Tall 1 (3/100) (1/2)
                     skype = withIM (1%7) (ClassName "Skype" `And` Role "MainWindow") (mastered (1/100) (1/2) Grid)
 
