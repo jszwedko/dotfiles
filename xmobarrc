@@ -2,13 +2,13 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "grey"
        , position = TopW L 90
-       , commands = [ 
+       , commands = [
                     Run BatteryP ["BAT0"]
-                      ["-t", "<acstatus><watts> (<left>%)",
-                       "-L", "10", "-H", "80", "-p", "3",
-                       "--", "-O", "<fc=green>On</fc> - ", "-i", "",
-                       "-L", "-15", "-H", "-5",
-                       "-l", "red", "-m", "blue", "-h", "green"]
+                      ["-t", "(<left>% / <timeleft>) <watts> <acstatus>",
+                       "-L", "30", "-H", "80", "-p", "3", "-S",
+                       "-l", "red", "-n", "blue", "-h", "green",
+                       "--", "-l", "red", "-m", "blue", "-h", "green"
+                       ]
                       600
                     , Run Weather "KPIT" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
                     , Run MultiCpu ["-L","3","-H","50","--normal","green","--high","red","-p","3","-t","Cpu: <autouser>"] 10
