@@ -88,3 +88,6 @@
 [submodule "vim/bundle/vim-terraform"]
 	path = vim/bundle/vim-terraform
 	url = git@github.com:bkad/vim-terraform.git
+[submodule "vim/bundle/vim-elixer"]
+	path = vim/bundle/vim-elixer
+	url = git@github.com:elixir-lang/vim-elixir.git
