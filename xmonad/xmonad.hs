@@ -13,6 +13,7 @@ import XMonad.Layout.Grid
 import XMonad.Layout.NoBorders
 import XMonad.Layout.MultiToggle
 import XMonad.Layout.Master
+import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import Data.Ratio ((%))
 
@@ -52,4 +53,9 @@ main = do
         , ((0, xK_Print), spawn "scrot")
         , ((mod4Mask, xK_x), sendMessage $ Toggle REFLECTX)
         , ((mod4Mask, xK_y), sendMessage $ Toggle REFLECTY)
+        , ((0, xF86XK_AudioRaiseVolume), spawn "amixer sset Master,0 5+")
+        , ((0, xF86XK_AudioLowerVolume), spawn "amixer sset Master,0 5-")
+        , ((0, xF86XK_AudioMute), spawn "amixer sset Master,0 0")
+        , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
+        , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
         ]
