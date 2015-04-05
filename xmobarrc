@@ -10,7 +10,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                        "--", "-l", "red", "-m", "blue", "-h", "green"
                        ]
                       600
-                    , Run Weather "KPIT" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Weather "KSFO" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
                     , Run MultiCpu ["-L","3","-H","50","--normal","green","--high","red","-p","3","-t","Cpu: <autouser>"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
@@ -21,5 +21,5 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %multicpu%  %memory% * %swap%  %battery%  %wlan0wi% <fc=#ee9a00>%date%</fc> %KPIT%"
+       , template = "%StdinReader% }{ %multicpu%  %memory% * %swap%  %battery%  %wlan0wi% <fc=#ee9a00>%date%</fc> %KSFO%"
        }
