@@ -51,7 +51,7 @@ if [[ -f ~/.ssh/agent.out ]] ; then
   source ~/.ssh/agent.out
 fi
 
-if `which hub` ; then
+if which hub > /dev/null ; then
   eval "$(hub alias -s)"
 fi
 
