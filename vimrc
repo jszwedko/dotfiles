@@ -29,7 +29,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/bats.vim'
-Plugin 'Vundle.vim'
 Plugin 'wincent/Command-T'
 call vundle#end()
 filetype plugin indent on
