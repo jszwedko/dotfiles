@@ -30,8 +30,13 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(rbenv init -)"
-eval "$(goenv init -)"
+if [ -e $HOME/.rbenv ]; then
+  eval "$(rbenv init -)"
+fi
+
+if [ -e $HOME/.goenv ]; then
+  eval "$(goenv init -)"
+fi
 
 source ~/.zshenv
 source ~/.aliases
@@ -46,7 +51,9 @@ if [[ -f ~/.ssh/agent.out ]] ; then
   source ~/.ssh/agent.out
 fi
 
-eval "$(hub alias -s)"
+if `which hub` ; then
+  eval "$(hub alias -s)"
+fi
 
 # added by travis gem
 [ -f /home/jesse/.travis/travis.sh ] && source /home/jesse/.travis/travis.sh
