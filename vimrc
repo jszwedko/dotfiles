@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/bats.vim'
+Plugin 'vimwiki/vimwiki'
 Plugin 'wincent/Command-T'
 call vundle#end()
 filetype plugin indent on
@@ -114,7 +115,6 @@ nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 nnoremap <leader>v V']
 nnoremap <leader>n :NERDTree<CR>
 inoremap jj <ESC>
-nnoremap <leader>w <C-w>v<C-w>1
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
