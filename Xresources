@@ -1,3 +1,5 @@
+URxvt.perl-ext: default,clipboard,url-select
+
 URxvt*geometry: 140x50
 URxvt.depth: 32
 URxvt*cursorBlink: on
@@ -10,10 +12,15 @@ URxvt*scrollTtyKeypress: true
 URxvt*secondaryScroll: true
 URxvt*saveLines: 8000
 
-URxvt.perl-ext: default,url-select
-URxvt.keysym.M-u: perl:url-select:select_next
+! URL selection
+URxvt.colorUL: #4682B4
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 3
+URxvt.keysym.C-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
+
+! Clipboard
 
 ! TABS
 !URxvt.perl-ext-common: tabbed
