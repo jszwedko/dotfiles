@@ -4,6 +4,7 @@ export PATH=/sbin/:/usr/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/l
 export EDITOR=vim
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 export CDPATH=.:$HOME/workspace
 
