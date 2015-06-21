@@ -462,5 +462,11 @@ formats = {
     notify_list = "           %w-%c-%C- %K| %n#$0: $1 $2 $3";
     notify_list_empty = "           %w-%c-%C- %K| %WNotify: %nThe notify list is empty";
   };
-  "Irssi::Script::adv_windowlist" = { awl_display_header = ""; };
+  "Irssi::Script::adv_windowlist" = {
+    awl_display_header = "";
+    awl_display_nokey = "%8$N$H$C$S";
+    awl_display_key = "$Q%K|$N%n $H$C$S";
+    awl_display_nokey_active = "%8$N$H$C$S%n";
+    awl_display_key_active = "%8$N$H$C$S%n";
+  };
 };

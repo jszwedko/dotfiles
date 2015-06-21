@@ -381,6 +381,13 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -391,5 +398,10 @@ settings = {
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = { awl_shared_sbar = "OFF"; awl_viewer = "no"; };
-  "fe-common/core" = { theme = "xchat"; autolog = "yes"; };
+  "fe-common/core" = {
+    theme = "default";
+    autolog = "yes";
+    hilight_level = "PUBLIC MSGS";
+  };
 };
+logs = { };
