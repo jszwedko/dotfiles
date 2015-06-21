@@ -41,7 +41,7 @@ if exists "dropbox" ; then
 fi
 
 if exists "xflux" ; then
-    xflux -z 15209
+    xflux -z 94110
 fi
 
 ssh-agent > ~/.ssh/agent.out
