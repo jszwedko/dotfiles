@@ -34,10 +34,6 @@ if [ -e $HOME/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-if [ -e $HOME/.goenv ]; then
-  eval "$(goenv init -)"
-fi
-
 source ~/.zshenv
 source ~/.aliases
 
