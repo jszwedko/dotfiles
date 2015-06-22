@@ -294,10 +294,11 @@ abstracts = {
 };
 formats = {
   "Irssi::Script::adv_windowlist" = {
-    awl_display_nokey = "[$N$H$C$S]";
-    awl_display_key = "[$N$H$C$S]";
+    awl_display_nokey = "$Q|$H$C$S";
+    awl_display_key = "$Q|$H$C$S";
     awl_display_header = "";
     awl_display_nokey_active = "%8$N$H$C$S%n";
     awl_display_key_active = "%8$N$H$C$S%n";
   };
+  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00303$0}}$1"; };
 };
