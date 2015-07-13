@@ -1,4 +1,4 @@
-URxvt.perl-ext: default,clipboard,url-select
+URxvt.perl-ext-common: default,clipboard,url-select,font-size
 
 URxvt*geometry: 140x50
 URxvt.depth: 32
@@ -11,6 +11,12 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
 URxvt*secondaryScroll: true
 URxvt*saveLines: 8000
+
+! resize fonts
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
 
 ! URL selection
 URxvt.colorUL: #4682B4
