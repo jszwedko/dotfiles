@@ -23,6 +23,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
+Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -173,6 +174,14 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'
 
 " Golang
 set rtp+=$GOROOT/misc/vim
+
+" vroom configuration
+let g:vroom_use_vimux = 1
+let g:vroom_test_unit_command = 'm'
+map <Leader>sf :VroomRunTestFile<CR>
+map <Leader>sn :VroomRunNearestTest<CR>
+map <Leader>sl :VroomRunLastTest<CR>
+" map <Leader>sa :call RunAllSpecs()<CR>
 
 let g:localvimrc_persistent=1
 
