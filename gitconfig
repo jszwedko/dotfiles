@@ -24,6 +24,13 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     pr = pull --rebase
+    drb = rebase -i --exec 'git duet-commit --amend --reset-author'
+    change = codereview change
+    gofmt = codereview gofmt
+    mail = codereview mail
+    pending = codereview pending
+    submit = codereview submit
+    sync = codereview sync
 
 [format]
     pretty = format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
@@ -35,3 +42,5 @@
 	excludesfile = ~/.git-excludes
 [push]
 	default = current
+[http]
+	cookiefile = /home/jesse/.gitcookies
