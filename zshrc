@@ -53,3 +53,6 @@ fi
 
 # added by travis gem
 [ -f /home/jesse/.travis/travis.sh ] && source /home/jesse/.travis/travis.sh
+
+export NVM_DIR="/home/jesse/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
