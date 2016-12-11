@@ -8,6 +8,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'embear/vim-localvimrc'
 Plugin 'fatih/vim-go'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'gmarik/Vundle.vim'
@@ -172,3 +173,6 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'
 
 " Golang
 set rtp+=$GOROOT/misc/vim
+
+let g:localvimrc_persistent=1
+
