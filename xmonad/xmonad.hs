@@ -1,6 +1,6 @@
 import XMonad
+import XMonad.Config
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
 import XMonad.Util.Run(spawnPipe)
@@ -38,7 +38,6 @@ main = do
         { manageHook = myManageHook
         , layoutHook = myLayoutHook
         , logHook = do
-                    takeTopFocus
                     dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "green" "" . shorten 50
