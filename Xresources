@@ -1,4 +1,4 @@
-URxvt.perl-ext-common: default,clipboard,url-select,font-size
+URxvt.perl-ext-common: default,matcher,font-size
 
 URxvt*geometry: 140x50
 URxvt.depth: 32
@@ -20,11 +20,12 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 
 ! URL selection
 URxvt.colorUL: #4682B4
-URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.urlLauncher: sensible-browser
 URxvt.matcher.button: 3
-URxvt.keysym.C-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
+URxvt.keysym.C-u: perl:matcher:select
+URxvt.keysym.M-u: perl:matcher:list
+URxvt.matcher.launcher: /usr/bin/xdg-open
+URxvt.matcher.underline: true
 
 ! Clipboard
 
