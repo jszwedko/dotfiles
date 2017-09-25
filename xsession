@@ -40,8 +40,8 @@ if exists "dropbox" ; then
     dropbox start
 fi
 
-if exists "xflux" ; then
-    xflux -z 94110
+if exists "redshift" ; then
+    redshift &
 fi
 
 ssh-agent > ~/.ssh/agent.out
