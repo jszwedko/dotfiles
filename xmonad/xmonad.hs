@@ -10,6 +10,7 @@ import Graphics.X11.ExtraTypes.XF86
 myManageHook = composeAll
     [ className =? "Gimp"      --> doFloat
     , className =? "Vncviewer" --> doFloat
+    , className =? "Pinentry" --> doFloat
     , manageDocks
     ]
 
