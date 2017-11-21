@@ -9,6 +9,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'embear/vim-localvimrc'
+Plugin 'evidens/vim-twig'
 Plugin 'fatih/vim-go'
 Plugin 'hashivim/vim-terraform'
 Plugin 'Glench/Vim-Jinja2-Syntax'
@@ -27,6 +28,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'skalnik/vim-vroom'
+Plugin 'StanAngeloff/php.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -191,3 +193,13 @@ let g:localvimrc_persistent=1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]node_modules$',
   \ }
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
