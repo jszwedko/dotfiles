@@ -1,3 +1,2 @@
 alias be='bundle exec'
-alias ack='ack-grep'
 alias t='todo.sh'
