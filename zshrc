@@ -51,6 +51,9 @@ if which hub > /dev/null ; then
   eval "$(hub alias -s)"
 fi
 
+# Use zsh packaged completions, but our binary is named differently
+compdef todo-txt=todo.sh
+
 # added by travis gem
 [ -f /home/jesse/.travis/travis.sh ] && source /home/jesse/.travis/travis.sh
 
