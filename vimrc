@@ -192,7 +192,7 @@ map <Leader>sl :VroomRunLastTest<CR>
 let g:localvimrc_persistent=1
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|vendor)$',
+  \ 'dir':  '\v[\/](node_modules|vendor|_site)$',
   \ }
 
 function! PhpSyntaxOverride()
