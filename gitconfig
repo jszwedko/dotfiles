@@ -44,3 +44,5 @@
 	default = current
 [http]
 	cookiefile = /home/jesse/.gitcookies
+[gpg]
+	program = gpg2
