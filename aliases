@@ -1,2 +1,2 @@
 alias be='bundle exec'
-alias t='todo.sh'
+alias t='todo-txt'
