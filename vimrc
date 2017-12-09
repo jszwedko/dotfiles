@@ -100,6 +100,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
+set textwidth=120
 set formatoptions=qrn1
 
 nnoremap <up> <nop>
