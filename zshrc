@@ -57,5 +57,7 @@ compdef todo-txt=todo.sh
 # added by travis gem
 [ -f /home/jesse/.travis/travis.sh ] && source /home/jesse/.travis/travis.sh
 
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
+
 export NVM_DIR="/home/jesse/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
