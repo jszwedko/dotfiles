@@ -86,3 +86,5 @@ ix() {
             }
             curl $opts -F f:1='<-' $* ix.io/$id
         }
+
+[[ -s "/home/jesse/.gvm/scripts/gvm" ]] && source "/home/jesse/.gvm/scripts/gvm"
