@@ -25,8 +25,8 @@ myLayoutHook =  smartBorders $
                     tall = Tall 1 (3/100) (1/2)
 
 myAdditionalKeys = [
-  ((mod4Mask, xK_l), spawn "xscreensaver-command -lock")
-  , ((mod4Mask .|. shiftMask, xK_l), spawn "xscreensaver-command -lock && systemctl suspend")
+  ((mod4Mask, xK_z), spawn "xscreensaver-command -lock")
+  , ((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock && systemctl suspend")
   , ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
   , ((0, xK_Print), spawn "scrot")
   , ((mod4Mask, xK_x), sendMessage $ Toggle REFLECTX)
