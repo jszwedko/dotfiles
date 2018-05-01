@@ -197,6 +197,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|vendor|_site)$',
   \ }
 
+hi clear SpellBad
+hi SpellBad cterm=bold,italic ctermfg=red
+
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
   hi! def link phpDocParam phpType
