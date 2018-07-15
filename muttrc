@@ -1,0 +1,36 @@
+source "gpg -d ~/.mutt/passwords.gpg |"
+
+set from = "jesse@szwedko.me"
+set realname = "Jesse Szwedko"
+
+set mbox_type = Maildir
+set folder = ~/.mail/jesse@szwedko.me
+set spoolfile = "+Inbox"
+set record="+Sent"
+set postponed="+Drafts"
+
+mailboxes +Inbox
+
+set smtp_url = "smtp://jesse@szwedko.me@smtp.fastmail.com:587/"
+
+set editor = "vim"
+
+set sort = reverse-threads
+set status_format = "%f"
+set date_format = "%b %d"
+set index_format = "%2C %Z %D %-15.15n %s"
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+unset markers
+
+set header_cache="~/.mutt/cache/headers"
+set message_cachedir="~/.mutt/cache/messages"
+
+set mailcap_path  = ~/.mutt/mailcap
+
+bind pager <up> previous-line
+bind pager <down> next-line
+
+# macro for archiving
+macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager A ":set confirmappend=no delete=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
