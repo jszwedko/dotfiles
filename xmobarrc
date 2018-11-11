@@ -16,16 +16,17 @@ Config {
                        "-o", "Batt (<left>% / <timeleft>) <watts>"
                        ]
                       600
-                    , Run Weather "KSFO" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run Weather "LEMD" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
                     , Run MultiCpu ["-L","3","-H","50","--normal","green","--high","red","-p","3","-t","Cpu: <autouser>"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Date "%a %b %_d %l:%M" "date" 10
                     , Run StdinReader
-                    , Run CommandReader "~/.xmonad/ledmon" "LED"
-                    , Run Wireless "wlan0" ["-t","<qualitybar> <essid>"] 10
+                    , Run Date "%a %b %_d %l:%M" "date" 10
+                    -- Needs with_alsa which debian doesn't configure with
+                    --, Run Volume "default" "Master" [] 10
+                    , Run Wireless "wlp3s0" ["-t","<qualitybar> <essid>"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %multicpu%  %memory% * %swap%  %battery%  %wlan0wi% <fc=#ee9a00>%date%</fc> %KSFO%"
+       , template = "%StdinReader% }{ %multicpu%  %memory% * %swap%  %battery%  %wlp3s0wi% <fc=#ee9a00>%date%</fc> %LEMD%"
        }
