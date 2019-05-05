@@ -40,6 +40,8 @@ myAdditionalKeys = [
 
   , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 10")
   , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
+
+   , ((mod4Mask, xK_b), sendMessage ToggleStruts)
   ]
 
 myConfig = def {
