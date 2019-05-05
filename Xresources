@@ -41,90 +41,26 @@ URxvt.matcher.underline: true
 URxvt*font: xft:Inconsolata:pixelsize=15
 URxvt*boldFont: xft:Inconsolata:pixelsize=15
 
-! COLOR PALETTE
-! Solarized color scheme for the X Window System
-!
-! http://ethanschoonover.com/solarized
-
-
-! Common
-
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
-
-
-! Dark
-
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
-
-
-! Light
-
-! #define S_base03        #fdf6e3
-! #define S_base02        #eee8d5
-! #define S_base01        #93a1a1
-! #define S_base00        #839496
-! #define S_base0         #657b83
-! #define S_base1         #586e75
-! #define S_base2         #073642
-! #define S_base3         #002b36
-
-!*background:              S_base03
-!*foreground:              S_base0
-!*fading:                  40
-!*fadeColor:               S_base03
-!*cursorColor:             S_base1
-!*pointerColorBackground:  S_base01
-!*pointerColorForeground:  S_base1
-
-!*color0:                  S_base02
-!*color1:                  S_red
-!*color2:                  S_green
-!*color3:                  S_yellow
-!*color4:                  S_blue
-!*color5:                  S_magenta
-!*color6:                  S_cyan
-!*color7:                  S_base2
-!*color8:                  S_base03
-!*color9:                  S_orange
-!*color10:                 S_base01
-!*color11:                 S_base00
-!*color12:                 S_base0
-!*color13:                 S_violet
-!*color14:                 S_base1
-!*color15:                 S_base3
-
-*background: #101010
-*foreground: #d0d0d0
-*cursorColor: #d0d0d0
-*color0: #101010
-*color1: #960050
-*color2: #66aa11
-*color3: #c47f2c
-*color4: #30309b
-*color5: #7e40a5
-*color6: #3579a8
-*color7: #9999aa
-*color8: #303030
-*color9: #ff0090
-*color10: #80ff00
-*color11: #ffba68
-*color12: #5f5fee
-*color13: #bb88dd
-*color14: #4eb4fa
-*color15: #d0d0d0
+# tomorrow night bright
+# https://github.com/chriskempson/tomorrow-theme/blob/master/Xdefaults/Tomorrow-Night-Bright
+*foreground:   #eaeaea
+*background:   #000000
+*cursorColor:  #aeafad
+*color0:       #000000
+*color1:       #912226
+*color2:       #778900
+*color3:       #ae7b00
+*color4:       #1d2594
+*color5:       #682a9b
+*color6:       #2b6651
+*color7:       #929593
+*color8:       #666666
+*color9:       #cc6666
+*color10:      #b5bd68
+*color11:      #f0c674
+*color12:      #81a2be
+*color13:      #b294bb
+*color14:      #8abeb7
+*color15: #ecebec
 
 URxvt*termName: rxvt-unicode
