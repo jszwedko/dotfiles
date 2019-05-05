@@ -38,8 +38,8 @@ URxvt.matcher.underline: true
 
 ! FONTS
 ! $ fc-list lists available fonts
-URxvt*font: xft:Inconsolata:pixelsize=14
-URxvt*boldFont: xft:Inconsolata:pixelsize=14
+URxvt*font: xft:Inconsolata:pixelsize=15
+URxvt*boldFont: xft:Inconsolata:pixelsize=15
 
 ! COLOR PALETTE
 ! Solarized color scheme for the X Window System
