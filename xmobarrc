@@ -6,7 +6,7 @@ Config {
        , fgColor = "grey"
        , position = TopW L 90
        , commands = [
-                    Run BatteryP ["BAT0"]
+                    Run BatteryP ["BAT0", "BAT1"]
                       ["-t", "<acstatus>",
                        "-L", "30", "-H", "80", "-p", "3", "-S",
                        "-l", "red", "-n", "blue", "-h", "green",
