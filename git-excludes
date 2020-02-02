@@ -20,6 +20,6 @@
 .sass-cache
 \#*
 dump.rdb
-tags
+.tags
 .lvimrc
 .todo
