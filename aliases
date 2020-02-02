@@ -1,3 +1,4 @@
 alias be='bundle exec'
 alias t='todo-txt'
 alias cci='circleci-cli'
+alias tmux="env TERM=xterm-256color tmux"
