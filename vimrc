@@ -4,6 +4,8 @@ set shell=/bin/bash
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'benmills/vimux'
 Plugin 'cespare/vim-toml'
 Plugin 'chase/vim-ansible-yaml'
@@ -53,8 +55,12 @@ filetype plugin indent on
 nmap OA gk
 nmap OB gj
 
-set background=dark
-colorscheme molokai
+set termguicolors " 24-bit colors
+" needed for 24-bit colors running tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme solarized8
+set background=light
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
