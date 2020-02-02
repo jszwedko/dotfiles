@@ -34,3 +34,5 @@ bind pager <down> next-line
 # macro for archiving
 macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager A ":set confirmappend=no delete=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+
+source ~/.mutt/colors/solarized.muttrc
