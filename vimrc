@@ -20,6 +20,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'honza/dockerfile.vim'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'ianks/vim-tsx'
 Plugin 'ingydotnet/yaml-vim'
 Plugin 'janko-m/vim-test'
 Plugin 'jgdavey/tslime.vim'
@@ -34,6 +35,7 @@ Plugin 'mhinz/vim-mix-format'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'posva/vim-vue'
+Plugin 'Quramy/tsuquyomi'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'skalnik/vim-vroom'
@@ -66,7 +68,6 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 syntax on
 let g:tex_flavor='latex'
-	set grepprg=grep\ -nH\ $*
 set ofu=syntaxcomplete#Complete
 
 au BufRead,BufNewFile *.less set filetype=less
@@ -143,14 +144,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-set t_Co=256
-
-
 "ctags
 "open location with tag as tab
 map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 "open location with tag as split
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+set tags=./.tags;
 
 "Fugitive config
 autocmd BufReadPost fugitive://* set bufhidden=delete
@@ -161,9 +160,6 @@ autocmd User fugitive
 
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
-
-map ,t :w<cr>
-map ,- :nohl<cr>
 
 set modelines=5
 
@@ -187,7 +183,8 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>dd <Plug>(go-def)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
@@ -198,6 +195,7 @@ set rtp+=$GOROOT/misc/vim
 " vroom configuration
 let g:vroom_use_vimux = 1
 let g:vroom_test_unit_command = 'm'
+let g:go_gorename_command = 'gopls'
 map <Leader>sf :VroomRunTestFile<CR>
 map <Leader>sn :VroomRunNearestTest<CR>
 map <Leader>sl :VroomRunLastTest<CR>
@@ -212,12 +210,8 @@ let g:ctrlp_custom_ignore = {
 hi clear SpellBad
 hi SpellBad cterm=bold,italic ctermfg=red
 
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
+set completeopt+=longest
 
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
+autocmd FileType markdown
+    \ set formatoptions-=q |
+    \ set formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*\[-*+]\\s\\+
