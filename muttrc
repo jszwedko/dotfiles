@@ -8,6 +8,7 @@ set folder = ~/.mail/jesse@szwedko.me
 set spoolfile = "+Inbox"
 set record="+Sent"
 set postponed="+Drafts"
+set trash="+Trash"
 
 mailboxes +Inbox
 
