@@ -31,6 +31,7 @@ set mailcap_path  = ~/.mutt/mailcap
 
 bind pager <up> previous-line
 bind pager <down> next-line
+macro index,pager \co "<pipe-message> urlscan --run 'firefox --new-window {}'<Enter>" "call urlscan to extract URLs out of a message"
 
 # macro for archiving
 macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
