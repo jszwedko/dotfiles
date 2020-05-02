@@ -37,4 +37,8 @@ macro index,pager \co "<pipe-message> urlscan --run 'firefox --new-window {}'<En
 macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager A ":set confirmappend=no delete=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 
+set query_command= "khard email --parsable %s"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
 source ~/.mutt/colors/solarized.muttrc
