@@ -5,6 +5,7 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'bkad/CamelCaseMotion'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'benmills/vimux'
 Plugin 'cespare/vim-toml'
@@ -188,6 +189,8 @@ let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
+
+let g:camelcasemotion_key = '<leader>'
 
 " Golang
 set rtp+=$GOROOT/misc/vim
