@@ -16,3 +16,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/home/jesse/bin:$PATH"
 export PATH="/home/jesse/go/bin:$PATH"
 export PATH="/home/jesse/.local/bin:$PATH"
+
+export AWS_VAULT_BACKEND=pass
+export AWS_VAULT_PASS_PREFIX=aws-vault
