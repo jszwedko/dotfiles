@@ -48,3 +48,5 @@
 	program = gpg2
 [rerere]
 	enabled = true
+[protocol "keybase"]
+	allow = always
