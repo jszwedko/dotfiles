@@ -187,6 +187,7 @@ au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 let g:go_fmt_command = "goimports"
+let go_metalinter_command = "golangci-lint run"
 
 let g:vimwiki_list = [{'path': '~/.vimwiki/wiki', 'path_html': '~/.vimwiki/html'}]
 
