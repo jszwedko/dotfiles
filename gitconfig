@@ -49,4 +49,9 @@
 [rerere]
 	enabled = true
 [protocol "keybase"]
-	allow = always
+  allow = always
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+[pull]
+	ff = only
