@@ -33,10 +33,12 @@ Plugin 'lifepillar/vim-solarized8'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-mix-format'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'ngmy/vim-rubocop'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'posva/vim-vue'
 Plugin 'Quramy/tsuquyomi'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'sjl/gundo.vim'
 Plugin 'skalnik/vim-vroom'
@@ -144,6 +146,56 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+"""""""""
+" coc
+"""""""""
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+"""""""""
+" end coc
+"""""""""
+
 "ctags
 "open location with tag as tab
 map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -203,6 +255,16 @@ map <Leader>sf :VroomRunTestFile<CR>
 map <Leader>sn :VroomRunNearestTest<CR>
 map <Leader>sl :VroomRunLastTest<CR>
 " map <Leader>sa :call RunAllSpecs()<CR>
+
+" Rust
+let g:rustfmt_autosave = 1
+"if executable('rls')
+  "au User lsp_setup call lsp#register_server({
+        "\ 'name': 'rls',
+        "\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        "\ 'whitelist': ['rust'],
+        "\ })
+"endif
 
 let g:localvimrc_persistent=1
 
