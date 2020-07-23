@@ -80,10 +80,9 @@ set modelines=0
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set textwidth=120
 set expandtab
 
-set colorcolumn=120
+set colorcolumn=80
 highlight ColorColumn ctermbg=4
 set encoding=utf-8
 set scrolloff=6
@@ -116,7 +115,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 set wrap
-set textwidth=120
+set textwidth=80
 set formatoptions=qrn1
 
 nnoremap <up> <nop>
