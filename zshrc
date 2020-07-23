@@ -88,3 +88,5 @@ ix() {
         }
 
 [[ -s "/home/jesse/.gvm/scripts/gvm" ]] && source "/home/jesse/.gvm/scripts/gvm"
+
+[[ -s $HOME/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
