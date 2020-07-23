@@ -16,5 +16,8 @@ export PATH="/home/jesse/bin:$PATH"
 export PATH="/home/jesse/go/bin:$PATH"
 export PATH="/home/jesse/.local/bin:$PATH"
 
+# configure Rust
+[[ -s $HOME/.cargo/env ]] && source $HOME/.cargo/env
+
 export AWS_VAULT_BACKEND=pass
 export AWS_VAULT_PASS_PREFIX=aws-vault
