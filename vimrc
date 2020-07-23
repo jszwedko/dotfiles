@@ -198,7 +198,7 @@ set rtp+=$GOROOT/misc/vim
 " vroom configuration
 let g:vroom_use_vimux = 1
 let g:vroom_test_unit_command = 'm'
-let g:go_gorename_command = 'gopls'
+let g:go_rename_command = 'gopls'
 map <Leader>sf :VroomRunTestFile<CR>
 map <Leader>sn :VroomRunNearestTest<CR>
 map <Leader>sl :VroomRunLastTest<CR>
