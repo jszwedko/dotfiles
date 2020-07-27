@@ -60,12 +60,13 @@ filetype plugin indent on
 nmap OA gk
 nmap OB gj
 
-set termguicolors " 24-bit colors
+"set termguicolors " 24-bit colors
 " needed for 24-bit colors running tmux
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme solarized8
+"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=light
+set t_Co=256
+colorscheme solarized
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
