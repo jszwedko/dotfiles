@@ -40,11 +40,10 @@ source ~/.aliases
 if [[ -f ~/.gpg-agent-info ]] ; then
   source ~/.gpg-agent-info
   export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
 fi
 
-if [[ -f ~/.ssh/agent.out ]] ; then
-  source ~/.ssh/agent.out
+if test "$SSH_AUTH_SOCK" ; then
+  ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
 fi
 
 if which hub > /dev/null ; then
