@@ -1,6 +1,6 @@
 export SHELL=/bin/zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PATH="$HOME/bin:$PATH"
 
