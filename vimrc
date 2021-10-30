@@ -32,7 +32,6 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-mix-format'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ngmy/vim-rubocop'
 Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
@@ -53,6 +52,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/bats.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'wincent/Command-T'
+if has('nvim')
+  Plug 'neovim/nvim-lspconfig'
+endif
 call plug#end()
 
 filetype plugin indent on
@@ -147,56 +149,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"""""""""
-" coc
-"""""""""
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-"""""""""
-" end coc
-"""""""""
-
 "ctags
 "open location with tag as tab
 map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -259,13 +211,6 @@ map <Leader>sl :VroomRunLastTest<CR>
 
 " Rust
 let g:rustfmt_autosave = 1
-"if executable('rls')
-  "au User lsp_setup call lsp#register_server({
-        "\ 'name': 'rls',
-        "\ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-        "\ 'whitelist': ['rust'],
-        "\ })
-"endif
 
 let g:localvimrc_persistent=1
 
@@ -281,3 +226,54 @@ set completeopt+=longest
 autocmd FileType markdown
     \ set formatoptions-=q |
     \ set formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*\[-*+]\\s\\+
+
+if has('nvim')
+	lua << EOF
+	local nvim_lsp = require('lspconfig')
+
+	-- Use an on_attach function to only map the following keys
+	-- after the language server attaches to the current buffer
+	local on_attach = function(client, bufnr)
+		local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+		local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+		-- Enable completion triggered by <c-x><c-o>
+		buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+		-- Mappings.
+		local opts = { noremap=true, silent=true }
+
+		-- See `:help vim.lsp.*` for documentation on any of the below functions
+		buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+		buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+		buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+		buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+		buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+		buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+		buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+		buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+		buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+		buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+		buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+		buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+		buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+		buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+		buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+		buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+		buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+	end
+
+	-- Use a loop to conveniently call 'setup' on multiple servers and
+	-- map buffer local keybindings when the language server attaches
+	local servers = { 'rust_analyzer' }
+	for _, lsp in ipairs(servers) do
+		nvim_lsp[lsp].setup {
+			on_attach = on_attach,
+			flags = {
+				debounce_text_changes = 150,
+			}
+		}
+	end
+EOF
+endif
