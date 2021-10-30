@@ -1,6 +1,7 @@
 [user]
 	name = Jesse Szwedko
 	email = jesse@szwedko.me
+	signingkey = 02B8F767A3B23EEC
 
 [color]
     ui = auto
@@ -45,7 +46,7 @@
 [http]
 	cookiefile = /home/jesse/.gitcookies
 [gpg]
-	program = gpg2
+	program = /usr/bin/gpg
 [rerere]
 	enabled = true
 [protocol "keybase"]
@@ -55,3 +56,5 @@
   insteadOf = https://github.com/
 [pull]
 	ff = only
+[commit]
+	gpgSign = true
