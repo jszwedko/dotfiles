@@ -92,3 +92,15 @@ ix() {
 [[ -s "/home/jesse/.gvm/scripts/gvm" ]] && source "/home/jesse/.gvm/scripts/gvm"
 
 [[ -s $HOME/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
+
+case "$OSTYPE" in
+  darwin*)
+    export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+    # brew
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  ;;
+  linux*)
+    # ...
+  ;;
+esac
