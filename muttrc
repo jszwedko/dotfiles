@@ -32,7 +32,7 @@ set mailcap_path  = ~/.mutt/mailcap
 
 bind pager <up> previous-line
 bind pager <down> next-line
-macro index,pager \co "<pipe-message> urlscan --run 'firefox --new-window {}'<Enter>" "call urlscan to extract URLs out of a message"
+macro index,pager \cb "<pipe-message> urlscan --run 'firefox --new-window {}'<Enter>" "call urlscan to extract URLs out of a message"
 
 # macro for archiving
 macro index S ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
@@ -58,3 +58,11 @@ macro index <F9> \
 	"notmuch: reconstruct thread"
 
 source ~/.mutt/colors/solarized.muttrc
+
+set sidebar_visible = yes
+set sidebar_width = 20
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind index,pager B sidebar-toggle-visible
