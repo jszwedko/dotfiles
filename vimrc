@@ -5,6 +5,7 @@ set shell=/bin/bash
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'romainl/flattened'
 Plugin 'benmills/vimux'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'cespare/vim-toml'
