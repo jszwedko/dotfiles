@@ -50,6 +50,9 @@ if which hub > /dev/null ; then
   eval "$(hub alias -s)"
 fi
 
+# golang
+source $HOME/.gvm/scripts/gvm
+
 # Use zsh packaged completions, but our binary is named differently
 compdef todo-txt=todo.sh
 
