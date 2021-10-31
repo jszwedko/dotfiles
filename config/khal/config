@@ -1,0 +1,8 @@
+[view]
+  theme = light
+
+[calendars]
+  [[home]]
+    path = ~/.calendars/personal/
+    color = dark green
+    priority = 20
