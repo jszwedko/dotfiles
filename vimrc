@@ -60,6 +60,7 @@ if has('nvim')
 	Plug 'hrsh7th/nvim-cmp'
   Plug 'L3MON4D3/LuaSnip'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'saadparwaiz1/cmp_luasnip'
 endif
 call plug#end()
 
@@ -236,16 +237,6 @@ autocmd FileType markdown
 if has('nvim')
 	lua << EOF
   local nvim_lsp = require('lspconfig')
-
-  local use = require('packer').use
-  require('packer').startup(function()
-    use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
-  end)
-
 
 	-- Use an on_attach function to only map the following keys
 	-- after the language server attaches to the current buffer
