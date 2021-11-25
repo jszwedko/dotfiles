@@ -1,0 +1,24 @@
+CopyArrivalDate yes
+
+Create near
+SyncState *
+
+IMAPAccount jesse@szwedko.me
+Host imap.fastmail.com
+SSLType IMAPS
+SSLVersions TLSv1.2
+User jesse@szwedko.me
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
+
+IMAPStore jesse@szwedko.me-remote
+Account jesse@szwedko.me
+
+MaildirStore jesse@szwedko.me-local
+Subfolders Verbatim
+Path ~/.mail/jesse@szwedko.me/
+Inbox ~/.mail/jesse@szwedko.me/Inbox
+
+Channel jesse@szwedko.me-default
+Far :jesse@szwedko.me-remote:
+Near :jesse@szwedko.me-local:
+Patterns *
